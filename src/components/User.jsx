@@ -9,21 +9,7 @@ class User extends Component {
 
 
     render() {
-        return (
-         <div>
-             <p>user: @fendi6</p>
-             <p>chirp: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium quasi provident beatae quas dignissimos perferendis consectetur quibusdam,</p>
-         </div>
-        <div>
-            <p>user: @hsohsio</p>
-            <p>chirp: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium quasi provident beatae quas dignissimos perferendis consectetur quibusdam,</p>
-        </div>
-        <div>
-            <p>user: @fenderson767</p>
-            <p>chirp: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium quasi provident beatae quas dignissimos perferendis consectetur quibusdam,</p>
-        </div>
-
-        )
+        
     }
 }
 // set{this.something} so that when the submit button is clicked, then the <p> in the chirp will change based on the value input
