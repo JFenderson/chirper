@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Input from './Input'
-
-class List extends Component {
-    constructor(props) {
-        super(props)
-    }
 
 
-    render() {
-        return (
-         <div>
-             
-         </div>
-        )
-    }
+function List(props){
+    const renderList = props.list.map((chirp) =>{
+    return(
+            <div className="card" key={chirp.id}>
+                <div>
+                    <h4>{chirp.message}</h4>
+                    <p>{chirp.user}</p>
+                </div>
+            </div>
+            );     
+     });      
+     return (
+        <ul>
+            {renderList};
+        </ul>
+    );
+   
 }
-
+   
 export default List;

@@ -1,46 +1,44 @@
 import React, {Component,Fragment} from 'react';
+import List from './List'
 
 
 class Input extends Component {
     constructor(props){
         super(props);
-        this.state={ 
-            formBox: "" };
         
+        
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
-    // getInitialState(){
-    //     return { text: this.props.text }
-    // }
-    handleChange({ target }){
-        this.setState({
-            [target.name]:target.value 
-        });
-        console.log('keyed');
+    getInitialState(){
+        return { 'submitted': false };
+    }
+
+    handleChange(e){
+        this.setState({ chirp: e.target.value });
         
     }
 
     handleSubmit(e){
-        console.log('click');
-        this.onSubmit(this.state.value);
-    }
+        e.preventDefault;
+        this.setState({ 'submitted': true });
+    } 
 
-    publish(){
-        console.log( this.state.formBox );
-    }
-
-
+    
 // value: this.state.value 
     render(){
+        if(this.state.submitted) {
+            return <List />
+        }
         return(
             <Fragment>
-                <form className="App" onSubmit={this.handleSubmit}>
-                    <textarea 
+                <form className="App" onSubmit={ this.handleSubmit }>
+                    <textarea
                     name="formBox"
                     type="text" 
                     placeholder="how are you feeling?" 
-                    value={this.state.value}
-                    onChange={ this.handleChange}
+                    value={this.value} 
+                    onChange={ this.handleChange }
                     ></textarea>
                     <input 
                     type="submit" 
@@ -48,7 +46,7 @@ class Input extends Component {
                     value="submit"
                     onSubmit= { this.handleSubmit }
                     />
-                    <h1>{this.state.formBox}</h1>
+                    {/* <h1>{this.state.chirp}</h1> */}
                 </form>
            
             </Fragment>
@@ -56,6 +54,12 @@ class Input extends Component {
     }
 }
 
-
+{/* <form onSubmit={this.usernameSubmitHandler} className="chirpUser">
+    <h1 className="chriper-title"> Welcome to Chirper!</h1>
+    <div>
+        <input type="text" onChange={this.usernameChangeHandler} placeholder="username" required />
+    </div>
+    <input type="submit" value="Submit" />
+</form> */}
 
 export default Input;

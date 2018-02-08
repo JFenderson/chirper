@@ -9,7 +9,9 @@ class User extends Component {
 
 
     render() {
-        
+        return(
+            <div></div>
+        )
     }
 }
 // set{this.something} so that when the submit button is clicked, then the <p> in the chirp will change based on the value input
