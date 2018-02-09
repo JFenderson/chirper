@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 function List(props){
     const renderList = props.list.map((chirp) =>{
     return(
-            <div className="card" key={chirp.id}>
+            <div key={chirp.id}>
                 <div>
                     <h4>{chirp.message}</h4>
                     <p>{chirp.user}</p>
